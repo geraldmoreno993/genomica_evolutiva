@@ -18,7 +18,7 @@ export PATH=$PATH:$PWD/sratoolkit.3.0.10-ubuntu64/bin
 ```
 
 
-#Código 2
+#Código 2: Dividir archivo .sra en dos archivos .fastq
 
 ```
 prefetch -h 
