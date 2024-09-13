@@ -1,8 +1,5 @@
 # genomica_evolutiva
-Clases de genómica evolutiva de la maestría en Bioinformática y Ciencias Ómicas
-
-# genetica_evolutiva
-Se agregarán aquí las clases de genómica evolutiva de la maestría de bioinformática UNMSM 2024
+Clases de genómica evolutiva de la maestría en Bioinformática y Ciencias Ómicas UNMSM 2024
 
 
 #Código 1: Descargar sratoolkit
