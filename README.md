@@ -28,3 +28,12 @@ fasterq-dump --split-files *.sra #separar en forward y reverse;
 gzip *fastq ;
 fastqc *
 ```
+
+
+#Código 3: Clase de 16 de set 2024
+
+```
+
+```
+
+
