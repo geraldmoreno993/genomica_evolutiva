@@ -16,7 +16,7 @@ tar -vxzf stk.tar.gz  #comprimir
 export PATH=$PATH:$PWD/sratoolkit.3.0.10-ubuntu64/bin
 
 ```
-
+#hola
 
 #Código 2: Descargar archivo .sra y dividirlo en dos archivos .fastq
 
