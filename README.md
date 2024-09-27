@@ -31,6 +31,7 @@ fastqc *
 
 
 #Código 3: Clase de 23 de set 2024
+## Ensamblaje por mapeo
 
 ```
 
@@ -46,6 +47,7 @@ fastqc * ;
 #1# indexar el genoma de referencia#
 bwa index reference.fasta ;
 
+##Ejecutar todo el paso 2 y 3 en una sola corrida porqeu es un bucle########################
 #2# preparar las instrucciones generales#
 for r1 in *fastq.gz
 do
@@ -63,6 +65,7 @@ samtools index -@ 4 ${prefix}.bam ;
 rm ${prefix}_uno.sam ${prefix}_unoa.bam ${prefix}_dosa.bam ${prefix}_tresa.bam ${prefix}_cuatroa.bam ;
 done ;
 ls ;
+########################################
 
 #4# extraer genoams consenso #
 for r1 in *bam
