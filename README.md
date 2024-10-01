@@ -93,4 +93,37 @@ ls ;
 
 ```
 
+#Código 3: Clase de 30 de set 2024
+## Reporte IGV
 
+
+```
+#######
+##IGV##
+#######
+
+conda install bioconda::igv
+
+igv
+
+#Anotar
+
+conda deactivate
+conda activate prokka
+cd /home/gerald/Documentos/maestria/2do_ciclo/genomica_evolutiva/clase4
+ls
+
+#Prokka generalmente acepta archivos.fasta, cambiando de extension a .fasta
+for file in *.fa; do
+    mv -- "$file" "${file%.fa}.fasta"
+done
+
+
+
+#Bucle para anotar multiples archivos fasta
+for a1 in *.fasta
+do
+prefix=$(basename $a1 .fasta)
+prokka --cpus 4 $a1 -o ${prefix} --prefix ${prefix} --kingdom Viruses ;
+done ;
+```
