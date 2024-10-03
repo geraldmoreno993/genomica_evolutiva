@@ -16,9 +16,9 @@ tar -vxzf stk.tar.gz  #descomprimir
 export PATH=$PATH:$PWD/sratoolkit.3.0.10-ubuntu64/bin
 
 ```
-#hola
 
-#Código 2: Descargar archivo .sra y dividirlo en dos archivos .fastq
+
+# Código 2: Descargar archivo .sra y dividirlo en dos archivos .fastq
 
 ```
 prefetch -h 
@@ -30,7 +30,7 @@ fastqc *
 ```
 
 
-#Código 3: Clase de 23 de set 2024
+# Código 3: Clase de 23 de set 2024
 ## Ensamblaje por mapeo
 
 ```
@@ -93,8 +93,8 @@ ls ;
 
 ```
 
-#Código 3: Clase de 30 de set 2024
-## Reporte IGV
+# Código 4: Reporte IGV y anotaciòn con Prokka
+## Clase de 30 de set 2024
 
 
 ```
@@ -105,8 +105,11 @@ ls ;
 conda install bioconda::igv
 
 igv
+#Software con interfaz gráfica que permite colocar como input el genoma de referencia en formato fasta y el bam.bai de la secuencia que vas a alinear o emsamblar.
 
-#Anotar
+############
+###PORKKA###
+############
 
 conda deactivate
 conda activate prokka
@@ -119,11 +122,36 @@ for file in *.fa; do
 done
 
 
-
 #Bucle para anotar multiples archivos fasta
 for a1 in *.fasta
 do
 prefix=$(basename $a1 .fasta)
 prokka --cpus 4 $a1 -o ${prefix} --prefix ${prefix} --kingdom Viruses ;
 done ;
+
 ```
+
+
+# Código 5: Visualización de genoma anotado con Artemis
+## Clase de 3 de octubre 2024
+
+
+
+```
+# instalacion de artemis #
+conda create -n art
+conda activate art
+conda install bioconda::artemis
+
+#Invocar el programa con:
+
+art
+
+#Dentro del programa con interfaz gráfica cargar en:
+#file > open file manager > cargar tu archivo de anotaicion .gff
+#en la ventana inferior aparecen los CDS haz click derecho y coloca show gene names 
+
+
+
+```
+
