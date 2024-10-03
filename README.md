@@ -108,7 +108,7 @@ igv
 #Software con interfaz gráfica que permite colocar como input el genoma de referencia en formato fasta y el bam.bai de la secuencia que vas a alinear o emsamblar.
 
 ############
-###PORKKA###
+###PROKKA###
 ############
 
 conda deactivate
