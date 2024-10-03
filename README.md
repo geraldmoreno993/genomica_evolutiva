@@ -2,7 +2,7 @@
 Clases de genómica evolutiva de la maestría en Bioinformática y Ciencias Ómicas UNMSM 2024
 
 
-#Código 1: Descargar sratoolkit
+# Código 1: Descargar sratoolkit
 
 ```
 mkdir genomas;
