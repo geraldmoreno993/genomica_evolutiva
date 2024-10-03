@@ -47,7 +47,7 @@ fastqc * ;
 #1# indexar el genoma de referencia#
 bwa index reference.fasta ;
 
-##Ejecutar todo el paso 2 y 3 en una sola corrida porqeu es un bucle########################
+##Ejecutar todo el paso 2 y 3 en una sola corrida porqeu es un bucle para obtener archivo .sam y bam ########################
 #2# preparar las instrucciones generales#
 for r1 in *fastq.gz
 do
