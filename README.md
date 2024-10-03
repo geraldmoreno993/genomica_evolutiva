@@ -1,4 +1,4 @@
-# genomica_evolutiva
+# GENOMICA EVOLUTIVA
 Clases de genómica evolutiva de la maestría en Bioinformática y Ciencias Ómicas UNMSM 2024
 
 
