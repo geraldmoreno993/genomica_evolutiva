@@ -30,8 +30,8 @@ fastqc *
 ```
 
 
-# Código 3: Clase de 23 de set 2024
-## Ensamblaje por mapeo
+# Código 3: Ensamblaje por mapeo
+## Clase de 23 de set 2024
 
 ```
 
