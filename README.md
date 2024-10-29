@@ -302,3 +302,57 @@ quast.py -o quast_results -m 0 consensus.fasta
 
 # 8.9 : Bandage
 ```
+
+
+# codigo 8 : BLAST (pipeline)
+material de apoyo > (http://www.mgc.ac.cn/VFs/download.htm)
+```
+pwd
+
+nano Chlamydia_accessions.txt
+
+wget https://ftp.ncbi.nlm.nih.gov/pub/datasets/command-line/v2/linux-amd64/datasets
+wget https://ftp.ncbi.nlm.nih.gov/pub/datasets/command-line/v2/linux-amd64/dataformat
+./datasets lit Chlamydia_accessions.txt
+# 9.1 : instalacion a traves de CONDA
+conda create --name blast
+conda install bioconda::blast
+
+
+
+# Descarga en formato GenBank y guarda en un archivo zip
+./datasets download genome accession --inputfile Chlamydia_accessions.txt --filename Chlamydia_fasta.zip --include genome,seq-report
+unzip Chlamydia_fasta.zip -d Chlamydia_data/
+
+# Alternativamente, descarga en formato FASTA
+./dataformat tsv genome --package Chlamydia_fasta.zip --fields organism-name,assminfo-level,accession > Chlamydia_metadata.tsv
+
+
+mv ./*/*.fna .
+
+#Descarga de la totalidad de la base de datos vfdb
+wget http://www.mgc.ac.cn/VFs/Down/VFDB_setB_nt.fas.gz
+wget http://www.mgc.ac.cn/VFs/Down/VFDB_setB_pro.fas.gz
+
+
+conda activate blast
+
+conda install bioconda::blast
+
+gunzip *
+#RUN BLAST
+
+# 9.7 : run BLAST+
+makeblastdb -in VFDB_setB_nt.fas -dbtype nucl ;
+blastn -db VFDB_setB_nt.fas -query GCA_001183825.1_ASM118382v1_genomic.fna -perc_identity 90 -outfmt 6 -num_threads 4 > blast.csv ; ##El mejor formato es el 10, (csv), el 6 es el (tab)
+head blast.csv ;
+cat blast.csv ;
+
+# 9.8 : headers (insertar un header)
+sed '1i query.acc.ver subject.acc.ver perc.identity alignment.length mismatches gap.opens q.start q.end s.start s.end evalue bit.score' blast.csv | tr " " "\t" > blast.2.csv
+
+# 9.9 : revisar resultados
+head blast.2.csv
+cat blast.2.csv
+wc -l blast.2.csv
+```
