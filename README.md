@@ -358,3 +358,39 @@ head blast.2.csv
 cat blast.2.csv
 wc -l blast.2.csv
 ```
+
+
+
+# codigo 10 : Visualización de output de BLAST en R
+
+```{r}
+setwd("~/Documentos/gerald_docs/genomica_evolutiva/blast_practica/seqs_chlamydia/genomes")
+
+dir()
+
+data <- read.csv("blast.2.csv", header = TRUE, sep = "\t")
+data
+length(data$subject.acc.ver)
+
+
+length(unique(data$subject.acc.ver))
+length(unique(data$query.acc.ver))
+
+summary(data$query.acc.ver)
+
+summary(data$alignment.length)
+
+boxplot(data$perc.identity)
+
+names(data)
+plot(data$perc.identity, data$perc.identity)
+
+library(httpgd)
+hgd()
+
+install.packages("httpgd")
+
+
+#Estimar coverage
+coverage = long query/long subject *100 = estimación de coverage
+```
