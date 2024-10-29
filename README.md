@@ -304,8 +304,10 @@ quast.py -o quast_results -m 0 consensus.fasta
 ```
 
 
-# codigo 8 : BLAST (pipeline)
+# codigo 9 : BLAST (pipeline)
 material de apoyo > (http://www.mgc.ac.cn/VFs/download.htm)
+Lo que se hará es construir una base de datos local con todos los factores de virulencia (nucleotidos y aminoacidos) y luego usar como query los genomas de mycoplasma para 
+blastear factores de virulencia
 ```
 pwd
 
